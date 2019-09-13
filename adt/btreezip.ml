@@ -4,7 +4,7 @@ type direction = Left | Right
 
 type 'a bzipper = (direction * 'a btree) list
 
-module Solution = struct
+module BZipper = struct
 let rec bzipper_first = function
   | Leaf a -> a, []
   | Node (tl, tr) ->
@@ -63,10 +63,10 @@ let t3 = Node (l 4, l 5)
 
 let t4 = Node (t2, t3)
 
-let (a, z) = Solution.bzipper_first t4
+let (a, z) = BZipper.bzipper_first t4
 
-let (a', z') = Solution.bzipper_last t4
+let (a', z') = BZipper.bzipper_last t4
 
-let (a, z) = Solution.bzipper_right (Leaf a) z
+let (a, z) = BZipper.bzipper_right (Leaf a) z
 
-let (a', z') = Solution.bzipper_left (Leaf a') z'
+let (a', z') = BZipper.bzipper_left (Leaf a') z'
