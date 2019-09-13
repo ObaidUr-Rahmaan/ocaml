@@ -111,7 +111,7 @@ It is also interesting to look at some side-by-side executions of non-trivial te
 
 # Cost-profiling OCaml
 
-A version of this visualiser taylored to OCaml is also available [online](https://fyp.jackhughesweb.com/) developed as a final year project by Jack Hughes. 
+A version of this visualiser taylored to OCaml is also available [online](https://fyp.jackhughesweb.com/) developed by a UoB student (Jack Hughes) 
 
 It is interesting to look at some sped-up side-by-side evaluations:
 
