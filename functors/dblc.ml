@@ -1,4 +1,4 @@
-module Solution : DBLCIRCULAR = struct
+module CircularDoublyLinkedList : DBLCIRCULAR = struct
   exception Empty;;
 
   type 'a circular_cell = { mutable rev_cell : 'a circular_cell option; mutable value : 'a; mutable fwd_cell : 'a circular_cell option; };;

@@ -1,14 +1,15 @@
-(* Question 1 *)
+
+(* Type Isomorphisms *)
+
+(* 1 ----------------------------------- *)
 
 type void
 
 let f (a : unit) = fun (b : void) -> failwith "f"
 
-(* Enter the right-to-left (from b^0 to 1) iso here *)
-
 let g (p : void -> 'b) = ()
 
-(* Calculate f(g(x)) and g(f(y)) showing that they equal the identity. 
+(* 
 
 Case 1. () |> f |> g = (fun b -> failwith "f") |> g = ()
 
@@ -24,8 +25,7 @@ This is trivial by quantification over the empty set.
 
 *)
 
-
-(* Question 2 *)
+(* 2 ----------------------------------- *)
 
 type ('a, 'b, 'c) sum3 = A of 'a | B of 'b | C of 'c
 
@@ -53,7 +53,7 @@ val f : 'a * ('b, 'c) sum -> ('a * 'b, 'a * 'c) sum = <fun>
 # let g = function Left (a, b) -> (a, Left b) | Right (a, c) -> (a, Right c);;
 val g : ('a * 'b, 'a * 'c) sum -> 'a * ('b, 'c) sum = <fun>
 
-1) Need to show 
+We Need to show: 
 
 x |> f |> g = x
 
