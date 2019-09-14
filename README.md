@@ -38,4 +38,6 @@ let rec listlength = function
     val listlength : 'a list -> int = <fun>
 ```
 
+* **Good Development Tools** The OCaml distribution comes with a very good suite of development tools. Of course you get the byte-code and native-code compilers, the byte-code interpreter and the interactive top-level. (Note that this means you can evaluate OCaml code interactively the way you would with Lisp or Tcl, as well as compile standalone executables linked with all your libraries, the way you would with C or C++.) But it also comes with a debugger and a profiler for the byte-code (native-code applications are profiled with gprof). The debugger deserves special mention: it's what is sometimes called a time travel debugger, in that you can not only step execution forward, but backwards -- going back in time to see previous values of variables. This is a real treat after years of stepping debuggers one step forward too many and then having to start over! I should also mention that the OCaml interactive top-level has a trace facility that's very easy to use and often obviates the need to use the debugger (at least when you have a reasonable idea of which function your bug is in).
 
+<br/>
