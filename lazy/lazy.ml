@@ -1,3 +1,5 @@
+(* Core types and functions *)
+
 type 'a cell   = Cons of 'a * 'a stream
 and  'a stream = ('a cell) Lazy.t;;
 
@@ -17,7 +19,7 @@ let rec fold f x0 = function
 
 let rec from_const k = lazy (Cons (k, from_const k));;
 
-(* Q1 : Map over two streams *)
+(* 1 : Lazy addition of 2 infinite lists (Easy) *)
 
 let rec map2 f s s' = match s, s' with
   | lazy (Cons (x, xs)), lazy (Cons (x', xs')) ->
@@ -25,11 +27,11 @@ let rec map2 f s s' = match s, s' with
 
 let rec sum s s' = map2 (+) s s';;
 
-(* Q2 : Differential *)
+(* 2 : Lazy subtraction of adjacent elements in the same infinite list (Medium) *)
 
 let dif s = map2 (-) (next s) s;;
 
-(* Q3 : Running average of k *)
+(* 3  : Lazy k-running average of an infinite list (Hard) *)
 
 let rec kSum k s =
   if k = 0 then from_const 0 
