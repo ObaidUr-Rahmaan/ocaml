@@ -25,7 +25,7 @@ let rec listlength = function
       | car::cdr -> 1 + listlength cdr
 ```
 
-results in this warning:
+   results in this warning:
 
 ```OCaml
 let rec listlength = function
