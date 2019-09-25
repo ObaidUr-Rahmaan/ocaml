@@ -35,7 +35,6 @@ module type SET = sig
   val eq        : 'a t -> 'a t -> bool
 end
  
- (* Question 1 *)
 module Set : SET = struct
   type 'a t = 'a list
 
@@ -74,7 +73,6 @@ module type SM = sig
   include SET with type 'a t := 'a t
 end
  
-(* Question 3 *)
 module Set_m : (SM with type 'a t = 'a Set.t) = struct
   include Set
 
@@ -85,7 +83,6 @@ module Set_m : (SM with type 'a t = 'a Set.t) = struct
     | x -> (fold (fun acc curr -> union curr acc) empty x)
 end
  
-(* Question 4 *)
 module N = struct
   open Set_m
   include Monad_e (Set_m)
